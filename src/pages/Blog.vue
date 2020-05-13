@@ -10,7 +10,7 @@
                                 class="font-bold text-sm mb-2 w-3/4 m-auto text-center lg:text-4xl lg:w-2/3">
                             {{ node.title }}
                         </h3></g-link>
-                        <vue-markdown class="text-gray-700 text-xs w-32 lg:w-2/3 m-auto text-center lg:text-xl">{{
+                        <vue-markdown :key="node.slug" class="text-gray-700 text-xs w-32 lg:w-2/3 m-auto text-center lg:text-xl">{{
                             excerpt(node) }}
                         </vue-markdown>
                         <article class=" w-full flex justify-around items-center flex">
