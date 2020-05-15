@@ -23,32 +23,55 @@
       -->
         <!-- Showcase -->
         <section class="section-a my-8">
-            <div class="container">
-                <div>
-                    <div class=" sm:hidden w-full mb-4">
+            <article class="lg:px-16 px-8  flex flex-col xl:flex-row items-center justify-between bg-gray-100">
+                <div class="flex-1 px-4 h-full ">
+                    <div class=" sm:hidden w-full ">
                         <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                     </div>
-                    <h1 class="text-3xl">{{ $page.post.title }}</h1>
+                    <h1 class="text-3xl text-center">{{ $page.post.title }}</h1>
                     <div class="w-full my-4">
                         <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                     </div>
-                    <vue-markdown class="">{{ changeData }}</vue-markdown>
-                    <div class="flex justify-between">
-                        <g-link class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded" to="/blog/" title="To blog overview"
-                        >Blog
-                        </g-link>
-                        <g-link class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded">
-                            Next Post
-                        </g-link>
-                    </div>
+                    <vue-markdown class="">{{ richTextDiscription }}</vue-markdown>
 
                 </div>
                 <g-image
-                        class="object-contain h-full w-full"
+                        class="object-contain h-full w-full flex-1"
                         v-if="$page.post.heroImage"
                         :src="renderHeroImage($page.post.heroImage.file.url)"
                         :alt="$page.post.heroImage.title"
                 />
+            </article>
+            <article class="lg:px-16 px-8  flex flex-col xl:flex-row items-center justify-between bg-gray-100">
+                <div class="flex justify-center items-center h-full">
+                    <vue-markdown class="">{{ richTextBody }}</vue-markdown>
+                </div>
+                <div class="w-full py-5 my-2">
+                    <ClientOnly>
+                        <carousel-3d :width="150" :height="250" :space="170" :disable3d="true" :clickable="false"
+                                     :controls-visible="true">
+                            <slide class="redondo" v-for="(img, i) in $page.post.media" :index="i" :key="img.id">
+
+                                <g-image
+                                        class="h-full object-cover "
+                                        :srcset="img.file.url"
+                                        alt="dailystyle-instagram-images"
+                                        fit="contain"
+                                />
+                            </slide>
+                        </carousel-3d>
+                    </ClientOnly>
+                </div>
+            </article>
+
+            <div class="lg:px-16 px-8 bg-white flex justify-between items-center">
+                <g-link class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded"
+                        to="/blog/" title="To blog overview"
+                >Blog
+                </g-link>
+                <g-link class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded">
+                    Next Post
+                </g-link>
             </div>
         </section>
 
@@ -105,12 +128,24 @@
             };
         },
         components: {
-            VueMarkdown
+            VueMarkdown,
+            Carousel3d: () =>
+                import ('vue-carousel-3d')
+                    .then(m => m.Carousel3d)
+                    .catch(),
+            Slide: () =>
+                import ('vue-carousel-3d')
+                    .then(m => m.Slide)
+                    .catch()
         },
         computed: {
-            changeData: function () {
+            richTextDiscription: function () {
                 // `this` points to the vm instance
                 return documentToHtmlString(this.$page.post.description)
+            },
+            richTextBody: function () {
+                // `this` points to the vm instance
+                return documentToHtmlString(this.$page.post.body)
             }
         },
         methods: {
@@ -402,6 +437,11 @@
             metaDescription,
             body,
             description,
+            media{
+                file {
+                    url
+                }
+            }
             heroImage {
                 file {
                     url
