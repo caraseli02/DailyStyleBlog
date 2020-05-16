@@ -1,17 +1,18 @@
 <template>
     <Layout>
+        <cubic-top class="CubicIndexTop hidden xl:block"/>
         <section class="w-full h-full mb-16 pb-16">
             <ul id="revers" class="flex flex-col justify-around items-start">
-                <li class="flex justify-around items-center h-full xs:h-12 overflow-hidden zaracolor w-full"
+                <li class="flex flex-col sm:flex-row justify-around items-center h-full xs:h-12 overflow-hidden zaracolor w-full"
                     v-for="{ node } in $page.post.edges" :key="node.id">
                     <div class="flex-1 flex flex-col justify-center items-center">
 
                         <g-link :to="`blog/${node.slug}`"><h3
-                                class="font-bold text-sm mb-2 w-3/4 m-auto text-center lg:text-4xl lg:w-2/3">
+                                class="font-bold text-sm mt-6 sm:mt-0 mb-2 w-3/4 m-auto text-center lg:text-4xl lg:w-2/3">
                             {{ node.title }}
                         </h3></g-link>
                         <vue-markdown :key="node.slug"
-                                      class="text-gray-700 text-xs w-32 lg:w-2/3 m-auto text-center lg:text-xl">{{
+                                      class="text-gray-700 text-xs mx-4 lg:w-2/3 m-auto text-center lg:text-xl">{{
                             excerpt(node) }}
                         </vue-markdown>
                         <article class=" w-full flex justify-around items-center flex">
@@ -20,7 +21,7 @@
                                              :clickable="false"
                                              :controls-visible="false">
                                     <slide class="slide hidden border-0 rounded sm:flex sm:w-22 lg:w-32 h-auto flex justify-around items-center"
-                                         v-for="(prendas, i) in node.prendas" :key="node.id" :index="i">
+                                           v-for="(prendas, i) in node.prendas" :key="node.id" :index="i">
                                         <a class=""
                                            :href="prendas.aLink">
                                             <g-image class="w-full h-auto object-contain "
@@ -46,12 +47,14 @@
                     </div>
                 </li>
             </ul>
+
             <Pager :info="$page.post.pageInfo"
                    linkClass="pager__link px-3 py-1 mx-3 my-1"
                    class="mt-4 inline-block w-full text-center flex justify-center items-center"
-                   range="2"
+                   range="1"
             />
         </section>
+
     </Layout>
 </template>
 
@@ -63,12 +66,14 @@
     import {getCoverImage, renderImage} from "../helpers/contentful";
     import ImageHover from "../components/ImageHover";
     import {Pager} from 'gridsome'
+    import CubicTop from "../components/CubicTop";
 
     export default {
         metaInfo: {
             title: "Fashion Blog"
         },
         components: {
+            CubicTop,
             VueMarkdown,
             ImageHover,
             Pager,
@@ -84,7 +89,7 @@
         methods: {
             excerpt(node) {
                 let excerpt = node.metaDescription ? node.metaDescription : node.body;
-                return truncate(documentToHtmlString(excerpt), 100);
+                return truncate(documentToHtmlString(excerpt), 200);
             },
             dateFormat(date) {
                 const thisDate = new Date(date);
@@ -107,7 +112,13 @@
 
 <style scoped>
 
-    .slide{
+    .CubicIndexTop{
+        z-index: 10;
+        left: 0;
+        top: 0;
+    }
+
+    .slide {
         border: 0.5px solid black;
         border-radius: 15px;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.13);
@@ -126,8 +137,10 @@
         font-size: 14px;
     }
 
-    #revers > li:nth-child(2n+0) {
-        flex-direction: row-reverse;
+    @media (min-width: 768px) {
+        #revers > li:nth-child(2n+0) {
+            flex-direction: row-reverse;
+        }
     }
 
     .zaracolor {
