@@ -31,7 +31,7 @@
 
     .cajaCube {
         z-index: -1;
-        top: 0;
+        top: 25%;
         left: 0px;
         height: 341px;
         width: 236px;

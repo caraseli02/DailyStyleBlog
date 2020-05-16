@@ -35,12 +35,12 @@
                     <vue-markdown class="">{{ richTextDiscription }}</vue-markdown>
 
                 </div>
-                <g-image
-                        class="object-contain h-full w-full flex-1"
-                        v-if="$page.post.heroImage"
-                        :src="renderHeroImage($page.post.heroImage.file.url)"
-                        :alt="$page.post.heroImage.title"
-                />
+                    <g-image
+                            class="object-contain h-full w-full flex-1"
+                            v-if="$page.post.heroImage"
+                            :src="renderHeroImage($page.post.heroImage.file.url)"
+                            :alt="$page.post.heroImage.title"
+                    />
             </article>
             <article class="lg:px-16 px-8  flex flex-col xl:flex-row items-center justify-between bg-gray-100">
                 <div class="flex justify-center items-center h-full">

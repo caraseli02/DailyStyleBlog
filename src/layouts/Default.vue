@@ -1,10 +1,6 @@
 <template>
     <div class="layout">
         <Nav/>
-        <profile-page>
-
-        </profile-page>
-
         <transition name="fade" appear>
             <main>
                 <slot/>

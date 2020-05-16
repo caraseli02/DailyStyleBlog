@@ -10,44 +10,38 @@
                                 class="font-bold text-sm mb-2 w-3/4 m-auto text-center lg:text-4xl lg:w-2/3">
                             {{ node.title }}
                         </h3></g-link>
-                        <vue-markdown :key="node.slug" class="text-gray-700 text-xs w-32 lg:w-2/3 m-auto text-center lg:text-xl">{{
+                        <vue-markdown :key="node.slug"
+                                      class="text-gray-700 text-xs w-32 lg:w-2/3 m-auto text-center lg:text-xl">{{
                             excerpt(node) }}
                         </vue-markdown>
                         <article class=" w-full flex justify-around items-center flex">
-                            <div class="hidden sm:flex sm:w-22 lg:w-32 h-auto flex justify-around items-center"
-                                 v-for="(prendas, i) in node.prendas" :key="node.id">
-                                <a class=""
-                                   :href="prendas.aLink">
-                                    <g-image class="w-full h-auto object-contain "
-                                             :src="prendas.imgLink"
-                                             alt="Image from Zara">
-                                    </g-image>
-                                </a>
-                            </div>
+                            <ClientOnly>
+                                <carousel-3d :width="100" :height="160" :space="110" :disable3d="true"
+                                             :clickable="false"
+                                             :controls-visible="false">
+                                    <slide class="slide hidden border-0 rounded sm:flex sm:w-22 lg:w-32 h-auto flex justify-around items-center"
+                                         v-for="(prendas, i) in node.prendas" :key="node.id" :index="i">
+                                        <a class=""
+                                           :href="prendas.aLink">
+                                            <g-image class="w-full h-auto object-contain "
+                                                     :src="prendas.imgLink"
+                                                     alt="Image from Zara">
+                                            </g-image>
+                                        </a>
+                                    </slide>
+                                </carousel-3d>
+                            </ClientOnly>
                         </article>
                     </div>
-                    <!--<div class="">
-                        <Tags class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2"
-                              :tags="node.tags"/>
-                    </div>-->
-                    <!--<div class="flex items-center">
-                        <img class="w-10 h-10 mr-4" src="../assets/icons/logoNegro.png"
-                             alt="DailyStyle fashion blog"/>
-                        <div class="text-sm">
-                            <p class="text-gray-900 leading-none">DS</p>
-                            <p class="text-gray-600">{{
-                                dateFormat(node.publishDate)
-                                }}</p>
-                        </div>
-                    </div>-->
-
                     <div class="flex-1 flex flex-col justify-center items-start max-h-screen">
                         <a href="" class="h-auto">
-                            <g-image
-                                    class="w-full h-auto"
-                                    :src="getCoverImage(node).url"
-                                    :alt="getCoverImage(node).title"
-                            />
+                            <g-link :to="`blog/${node.slug}`">
+                                <g-image
+                                        class="w-full h-auto"
+                                        :src="getCoverImage(node).url"
+                                        :alt="getCoverImage(node).title"
+                                />
+                            </g-link>
                         </a>
                     </div>
                 </li>
@@ -77,7 +71,15 @@
         components: {
             VueMarkdown,
             ImageHover,
-            Pager
+            Pager,
+            Carousel3d: () =>
+                import ('vue-carousel-3d')
+                    .then(m => m.Carousel3d)
+                    .catch(),
+            Slide: () =>
+                import ('vue-carousel-3d')
+                    .then(m => m.Slide)
+                    .catch()
         },
         methods: {
             excerpt(node) {
@@ -104,6 +106,17 @@
 </script>
 
 <style scoped>
+
+    .slide{
+        border: 0.5px solid black;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.13);
+    }
+
+    .slide img {
+        object-fit: cover;
+        height: 100%;
+    }
 
     template {
         background-color: #EDF2F7;

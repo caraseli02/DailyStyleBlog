@@ -1,5 +1,6 @@
 <template>
     <Layout class="relative">
+        <profile-page/>
         <cubic-top/>
         <CubicBottom/>
         <section>
@@ -20,7 +21,8 @@
                         <g-link class="gradientLinks" to="/blog"><h2
                                 class="text-2xl xl:text-4xl text-gray-800 font-bold">
                             {{getBlogs.titleBloc1}}</h2></g-link>
-                        <p class=" flex flex-col justify-around text-gray-600 mb-3 lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl">
+                        <p class=" flex flex-col justify-around text-gray-700 mb-3 lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl
+                                    md:leading-normal lg:leading-relaxed">
                             {{getBlogs.textBloc1}}
                         </p>
                         <div class=" w-full bg-white flex justify-center sm:justify-end items-center pb-8">
@@ -56,17 +58,21 @@
                     </div>
                     <div class="w-full sm:w-1/2 pl-6 flex justify-center items-start flex-col relative">
                         <div class="hidden absolute bottom-0 right-0 mr-3  xl:block w-3/4">
-                            <h3 class="italic text-gray-500">"¿Cuál de mis fotos es mi fotografía preferida? Una que voy a hacer mañana."</h3>
+                            <h3 class="italic text-gray-500">"¿Cuál de mis fotos es mi fotografía preferida? Una que voy
+                                a hacer mañana."</h3>
                             <span class="flex justify-end mt-1 text-gray-500">Imogen Cunningham</span>
                         </div>
                         <g-link class="gradientLinks" to="/blog"><h2
                                 class="text-2xl xl:text-4xl text-gray-800 font-bold">
                             {{getBlogs.titleBloc2}}</h2></g-link>
-                        <p class=" flex flex-col justify-around text-gray-600 mb-3 lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl">
+                        <p class=" flex flex-col justify-around text-gray-700 mb-3
+                                    lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl
+                                    md:leading-normal lg:leading-relaxed ">
                             {{getBlogs.textBloc2}}
                         </p>
-                        <div class=" w-full bg-white flex justify-center sm:justify-start items-center pb-8">
-                            <g-link class="bg-transparent hoverGradiant text-gray-500 font-semibold hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent rounded"
+                        <div class=" w-full bg-white flex justify-center sm:justify-end items-center py-6 pr-4">
+                            <g-link class="bg-transparent hoverGradiant text-gray-500 font-semibold
+                            hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent rounded"
                                     to="/galleries/" title="To blog overview"
                             >Descubre Mas →
                             </g-link>
