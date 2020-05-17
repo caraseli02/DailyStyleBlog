@@ -33,13 +33,15 @@
                                         class="w-full lg:w-4/12 px-4  lg:order-3 lg:text-right lg:self-center"
                                 >
                                     <div class="sm:py-6 px-3 mt-24 sm:mt-10 lg:mt-0 flex justify-center">
-                                        <a href="https://www.instagram.com/daiilystylee/"><button
-                                                class="flow justify-center items-center bg-gray-500 active:bg-black uppercase text-pink-200 font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
-                                                type="button"
-                                                style="transition: all 0.15s ease 0s;"
-                                        >
-                                            Instagram
-                                        </button></a>
+                                        <a href="https://www.instagram.com/daiilystylee/">
+                                            <button
+                                                    class="flow justify-center items-center bg-gray-500 active:bg-black uppercase text-pink-200 font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                                                    type="button"
+                                                    style="transition: all 0.15s ease 0s;"
+                                            >
+                                                Instagram
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="w-full lg:w-4/12 px-4 lg:order-1">
@@ -47,20 +49,20 @@
                                         <div class="mr-4 p-3 text-center">
                       <span
                               class="text-xl font-bold block uppercase tracking-wide text-gray-700"
-                      >22</span
-                      ><span class="text-sm text-gray-500">Looks</span>
+                      >{{instData[0]['node']['Followers'] }}</span
+                      ><span class="text-sm text-gray-500">Followers</span>
                                         </div>
                                         <div class="mr-4 p-3 text-center">
                       <span
                               class="text-xl font-bold block uppercase tracking-wide text-gray-700"
-                      >10</span
-                      ><span class="text-sm text-gray-500">Photos</span>
+                      >{{instData[0]['node']['Following'] }}</span
+                      ><span class="text-sm text-gray-500">Following</span>
                                         </div>
                                         <div class="lg:mr-4 p-3 text-center">
                       <span
                               class="text-xl font-bold block uppercase tracking-wide text-gray-700"
-                      >89</span
-                      ><span class="text-sm text-gray-500">Comments</span>
+                      >{{instData[0]['node']['Posts'] }}</span
+                      ><span class="text-sm text-gray-500">Posts</span>
                                         </div>
                                     </div>
                                 </div>
@@ -96,6 +98,11 @@
 
     export default {
         name: "profilePage",
+        computed: {
+            instData: function(){
+                return this.$static.allDataInstagram.edges
+            }
+        }
     }
 </script>
 
@@ -103,6 +110,7 @@
     .imgMaxW {
         max-width: 150px;
     }
+
     .gradient {
         background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
     }
@@ -115,3 +123,17 @@
         height: 500px;
     }
 </style>
+
+<static-query>
+    query {
+        allDataInstagram {
+            edges {
+                node {
+                    Followers
+                    Following
+                    Posts
+                }
+            }
+        }
+    }
+</static-query>
