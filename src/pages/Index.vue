@@ -12,7 +12,7 @@
 
             <div class="max-w-6xl mx-auto m-8 ">
 
-                <div class="flex flex-wrap ">
+                <div class="flex flex-wrap mb-16 md:mb-12">
                     <div class="w-full sm:w-1/2 pl-6 flex justify-center items-start flex-col relative">
                         <div class="hidden absolute top-0 right-0  xl:block">
                             <h3 class="italic text-gray-500">"Lo más importante al vestir es una sonrisa"</h3>
@@ -43,8 +43,32 @@
                         </g-link>
                     </div>
                 </div>
-
-                <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+                <div class="relative w-full h-12 md:h20 min-w-full center lineZ">
+                    <svg class="absolute w-full h-full " viewBox="0 0 10 10"
+                         preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color: rgb(250,251,252); stop-opacity: 1;"></stop>
+                                <stop offset="100%" style="stop-color: rgb(235,235,235); stop-opacity: 1;"></stop>
+                            </linearGradient>
+                        </defs>
+                        <polygon points="0,0 10,0 0,10" fill="white"></polygon>
+                    </svg>
+                    <svg class="absolute top left w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <line x1="100%" y1="0%" x2="0%" y2="100%" stroke="#B8C4C2" style="stroke-width: 0.5"></line>
+                    </svg>
+                    <svg class="absolute w-full h-full lineZ" viewBox="0 0 10 10"
+                         preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color: rgb(235,235,235); stop-opacity: 1;"></stop>
+                                <stop offset="100%" style="stop-color: rgb(250,251,252); stop-opacity: 1;"></stop>
+                            </linearGradient>
+                        </defs>
+                        <polygon points="0,10 10,10 10,0" fill="url(&quot;#gradient2&quot;)"></polygon>
+                    </svg>
+                </div>
+                <div class="flex flex-wrap flex-col-reverse sm:flex-row colorMongo pt-16 md:pt-12">
                     <div class="w-full sm:w-1/2">
                         <g-link to="/galleries">
                             <g-image
@@ -146,6 +170,14 @@
 </script>
 
 <style scoped>
+
+    .colorMongo{
+        background-color: #FAFBFC;
+    }
+
+    .lineZ {
+        z-index: -1;
+    }
 
     .hoverGradiant:hover {
         background: linear-gradient(90deg, #fbd2e0 0%, #fbc9fb 100%);

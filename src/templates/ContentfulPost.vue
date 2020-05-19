@@ -33,14 +33,15 @@
                         <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                     </div>
                     <vue-markdown class="">{{ richTextDiscription }}</vue-markdown>
-
                 </div>
+                <div class="flex-1">
                     <g-image
-                            class="object-contain h-full w-full flex-1"
+                            class="object-contain h-full w-full"
                             v-if="$page.post.heroImage"
                             :src="renderHeroImage($page.post.heroImage.file.url)"
                             :alt="$page.post.heroImage.title"
                     />
+                </div>
             </article>
             <article class="lg:px-16 px-8  flex flex-col xl:flex-row items-center justify-between bg-gray-100">
                 <div class="flex justify-center items-center h-full">
