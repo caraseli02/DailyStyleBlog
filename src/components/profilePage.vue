@@ -21,11 +21,9 @@
                                 >
                                     <div class="">
                                         <g-image
-                                                alt="dailystyle picture"
-                                                src="https://scontent-mad1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.180.1440.1440a/s640x640/95894175_2417251735250350_4946315891094207263_n.jpg?_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=110&_nc_ohc=3dz-OlBqRe8AX87ajhL&oh=ff9de7e10c884366b0af83089d8c7f1e&oe=5EE2BC7E"
-                                                class="imgMaxW shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-11 lg:-ml-16"
-
-
+                                                alt="dailystyle-profile-foto"
+                                                src="../assets/img/DailyStyleProfile.jpg"
+                                               class="imgMaxW shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-11 lg:-ml-16"
                                         />
                                     </div>
                                 </div>

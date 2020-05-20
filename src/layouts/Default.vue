@@ -22,13 +22,21 @@
                             <li class="m-4 inline-block mr-2 md:block md:mr-0  w-6 h-6">
                                 <a href="https://www.instagram.com/daiilystylee/"
                                    class="no-underline hover:underline text-gray-800 hover:text-orange-500">
-                                    <img src="../assets/media/Instagram.svg" height="32" width="32"/>
+                                    <g-image src="../assets/media/Instagram.svg"
+                                             height="32"
+                                             width="32"
+                                             alt="Instagram"
+                                    />
 
                                 </a>
                             </li>
                             <li class="m-4 inline-block mr-2 md:block md:mr-0 w-6 h-6">
                                 <a href="mailto:daniela.mindru@gmail.com"  class="no-underline hover:underline text-gray-800 hover:text-orange-500">
-                                    <img src="../assets/media/Gmail.svg" height="32" width="32"/>
+                                    <g-image src="../assets/media/Gmail.svg"
+                                             height="32"
+                                             width="32"
+                                            alt="Gmail"
+                                    />
 
                                 </a>
                             </li>
