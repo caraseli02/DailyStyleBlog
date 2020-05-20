@@ -114,6 +114,10 @@
                                 :srcset="node.node.display_url"
                                 alt="dailystyle-instagram-images"
                                 fit="contain"
+                                width="561"
+                                height="903"
+                                immediate="false"
+                                quality="50"
                         />
                     </slide>
                 </carousel-3d>
