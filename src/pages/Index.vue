@@ -36,9 +36,8 @@
                         <g-link to="/blog">
                             <g-image
                                     class="w-5/6 sm:h-auto mx-auto"
-                                    :srcset="$page.contentfulIndexMain.imgBloc1[0].secure_url"
+                                    src="../assets/img/DailyStyleLooksBlog.jpg"
                                     alt="dailystyle blog picture"
-
                             />
                         </g-link>
                     </div>
@@ -71,12 +70,9 @@
                 <div class="flex flex-wrap flex-col-reverse sm:flex-row colorMongo pt-16 md:pt-12">
                     <div class="w-full sm:w-1/2">
                         <g-link to="/galleries">
-                            <g-image
-                                    class="w-5/6 sm:h-auto mx-auto"
-                                    :srcset="$page.contentfulIndexMain.imgBloc2[0].secure_url"
-                                    alt="dailystyle gallery picture"
-
-                            />
+                            <g-image class="w-5/6 sm:h-auto mx-auto"
+                                     src="../assets/img/DailyStyleLooksGallery.jpg"
+                                     alt="dailystyle gallery picture"/>
                         </g-link>
 
                     </div>
@@ -171,7 +167,7 @@
 
 <style scoped>
 
-    .colorMongo{
+    .colorMongo {
         background-color: #FAFBFC;
     }
 
