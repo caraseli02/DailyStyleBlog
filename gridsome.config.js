@@ -7,7 +7,6 @@ const contentful = require("./plugin.confentful");
 
 module.exports = {
     chainWebpack: config => config.mode("development"),
-    siteName: "",
     siteDescription: "",
     siteUrl: "",
     icon: {

@@ -1,10 +1,15 @@
 import Vue from "vue";
 
 import DefaultLayout from "~/layouts/Default.vue";
+import Cloudinary, {CldContext, CldImage,  CldTransformation, CldPoster} from "cloudinary-vue";
 
 export default function (Vue, {router, head, isClient, isServer}) {
     // Set default layout as a global component
-    Vue.component("Layout", DefaultLayout);
+    Vue.component("Layout", DefaultLayout)
+    Vue.use(Cloudinary, {
+        configuration: { cloudName: "daiilystylee" },
+        components: [ CldImage , CldContext,  CldTransformation]
+    })
     head.link.push({
         rel: "stylesheet",
         href:

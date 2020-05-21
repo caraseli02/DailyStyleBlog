@@ -105,15 +105,13 @@
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="gradientGallery w-full py-5 my-2">
             <ClientOnly>
-                <carousel-3d :width="187" :height="301" :space="200" :disable3d="true" :clickable="false"
+                <carousel-3d :width="220" :space="240" :disable3d="true" :clickable="false"
                              :controls-visible="true">
-                    <slide class="redondo" v-for="(node, i) in $page.allInstagramPhoto.edges" :index="i" :key="node.id">
+                    <slide class="redondo" v-for="(n, index) in 11" :index="index" :key="n.id">
 
                         <g-image
-                                class="h-full object-cover rounded-lg"
-                                :srcset="node.node.display_url"
-                                alt="dailystyle-instagram-images"
-                                fit="contain"
+                                :src="require(`@/assets/Instagram/DailyStyleLooks${n}.jpg`)"
+                                fit="fill"
                                 width="561"
                                 height="903"
                                 immediate="false"
@@ -137,6 +135,11 @@
         name: 'Index',
         metaInfo: {
             title: "DailyStyleLooks a blog about Fashion and Beauty "
+        },
+        data: function () {
+            return {
+                imgList: [],
+            }
         },
         components: {
             VueMarkdown,
@@ -163,9 +166,12 @@
         computed: {
             getBlogs() {
                 return this.$page.contentfulIndexMain
+            },
+            getImg() {
+                return require('../assets/Instagram/DailyStyleLooks1.jpg')
             }
         }
-    };
+    }
 
 </script>
 
@@ -210,20 +216,6 @@
 
 <page-query>
     query {
-        allInstagramPhoto {
-            edges {
-                node {
-                    display_url
-                    edge_media_to_caption {
-                        edges {
-                            node {
-                                text
-                            }
-                        }
-                    }
-                }
-            }
-        }
         contentfulIndexMain(id: "5yTmn6wGeJQ9HyvJPxxR2e") {
             titleBloc1
             titleBloc2
