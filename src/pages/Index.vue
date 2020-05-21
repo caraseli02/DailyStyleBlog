@@ -166,9 +166,6 @@
         computed: {
             getBlogs() {
                 return this.$page.contentfulIndexMain
-            },
-            getImg() {
-                return require('../assets/Instagram/DailyStyleLooks1.jpg')
             }
         }
     }
@@ -208,8 +205,6 @@
     .fondoBlog {
         background-image: url("../assets/img/fondoBlog.svg");
         background-size: cover;
-
-
     }
 
 </style>
