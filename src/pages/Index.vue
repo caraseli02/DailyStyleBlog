@@ -102,20 +102,39 @@
             </div>
         </section>
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-8 text-black "><a
-                href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
+                href="https://www.instagram.com/daiilystylee/">INSTAGRAM{{CreatImgList}}</a></h3>
         <article class="gradientGallery w-full py-5 my-2">
             <ClientOnly>
                 <carousel-3d :width="220" :space="240" :disable3d="true" :clickable="false"
                              :controls-visible="true">
-                    <slide class="redondo" v-for="(n, index) in 11" :index="index" :key="n.id">
-
+                    <slide class="redondo" :index="0">
                         <g-image
-                                :src="require(`@/assets/DailyStyleLooks${n}.jpg`)"
-                                fit="fill"
-                                width="561"
-                                height="903"
-                                immediate="false"
-                                quality="50"
+                                src="~/assets/DailyStyleLooks0.jpg"
+                                :fit="cover"
+                                :width="561"
+                                :height="903"
+                                :immediate="false"
+                                :quality="50"
+                        />
+                    </slide>
+                    <slide class="redondo" :index="1">
+                        <g-image
+                                src="~/assets/DailyStyleLooks1.jpg"
+                                :fit="cover"
+                                :width="561"
+                                :height="903"
+                                :immediate="false"
+                                :quality="50"
+                        />
+                    </slide>
+                    <slide class="redondo" :index="2">
+                        <g-image
+                                src="~/assets/DailyStyleLooks2.jpg"
+                                :fit="cover"
+                                :width="561"
+                                :height="903"
+                                :immediate="false"
+                                :quality="50"
                         />
                     </slide>
                 </carousel-3d>
@@ -139,6 +158,7 @@
         data: function () {
             return {
                 imgList: [],
+                // matchNumbers: '^[0-9]*$'
             }
         },
         components: {
@@ -167,9 +187,15 @@
             getBlogs() {
                 return this.$page.contentfulIndexMain
             }
+/*            CreatImgList() {
+                var i;
+                for (i = 0; i < 10; i++) {
+                    this.imgList[i] = `../assets/DailyStyleLooks${i}.jpg`
+                }
+                    return this.imgList[i]
+            }*/
         }
     }
-
 </script>
 
 <style scoped>
