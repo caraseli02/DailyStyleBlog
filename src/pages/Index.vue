@@ -105,7 +105,7 @@
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="gradientGallery w-full py-5 my-2 flex justify-around items-center">
             <g-image
-                    src="../assets/img/DailyStyleLooks2.jpg"
+                    src="~/assets/img/DailyStyleLooks2.jpg"
                     fit="cover"
                     width="201"
                     height="324"
@@ -114,7 +114,7 @@
                     alt="dailystyle-instagram-picture"
             />
             <g-image
-                    src="../assets/img/DailyStyleLooks3.jpg"
+                    src="~/assets/img/DailyStyleLooks3.jpg"
                     fit="cover"
                     width="201"
                     height="324"
@@ -123,7 +123,7 @@
                     alt="dailystyle-instagram-picture"
             />
             <g-image
-                    src="../assets/img/DailyStyleLooks4.jpg"
+                    src="~/assets/img/DailyStyleLooks4.jpg"
                     fit="cover"
                     width="201"
                     height="324"
