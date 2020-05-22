@@ -102,7 +102,7 @@
             </div>
         </section>
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-8 text-black "><a
-                href="https://www.instagram.com/daiilystylee/">INSTAGRAM{{CreatImgList}}</a></h3>
+                href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="gradientGallery w-full py-5 my-2 flex justify-around items-center">
             <g-image
                     src="~/assets/DailyStyleLooks2.jpg"
@@ -215,11 +215,6 @@
 
     .redondo {
         border-radius: 15px;
-    }
-
-    .fondoBlog {
-        background-image: url("../../static/fondoBlog.jpg");
-        background-size: cover;
     }
 
 </style>
