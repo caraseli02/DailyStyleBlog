@@ -103,30 +103,17 @@
         </section>
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-8 text-black "><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM{{CreatImgList}}</a></h3>
-        <article class="gradientGallery w-full py-5 my-2">
-            <ClientOnly>
-                <carousel-3d :width="220" :space="240" :disable3d="true" :clickable="false"
-                             :controls-visible="true">
-                    <slide class="redondo" :index="0">
+        <article class="gradientGallery w-full py-5 my-2 flex justify-around items-center">
                         <cld-image publicId="Instagram/InstagramDailyStyleLooks-Camisa-Blanca.jpg">
-                            <cld-transformation width="561" crop="fill"/>
+                            <cld-transformation width="220" crop="fill" quality="auto" fetchFormat="auto"/>
                         </cld-image>
-                    </slide>
-                    <slide class="redondo" :index="1">
                         <cld-image publicId="Instagram/looks1.jpg">
-                            <cld-transformation width="561" crop="fill"/>
+                            <cld-transformation width="220" crop="fill" quality="auto" fetchFormat="auto"/>
                         </cld-image>
-                    </slide>
-                    <slide class="redondo" :index="2">
 
                         <cld-image publicId="Instagram/looks2.jpg" >
-                            <cld-transformation width="561" crop="fill" />
+                            <cld-transformation width="220" crop="fill" quality="auto" fetchFormat="auto"/>
                         </cld-image>
-
-
-                    </slide>
-                </carousel-3d>
-            </ClientOnly>
         </article>
     </Layout>
 </template>
