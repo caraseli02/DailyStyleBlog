@@ -104,16 +104,30 @@
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-8 text-black "><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM{{CreatImgList}}</a></h3>
         <article class="gradientGallery w-full py-5 my-2 flex justify-around items-center">
-                        <cld-image publicId="Instagram/InstagramDailyStyleLooks-Camisa-Blanca.jpg">
-                            <cld-transformation width="220" crop="fill" quality="auto" fetchFormat="auto"/>
-                        </cld-image>
-                        <cld-image publicId="Instagram/looks1.jpg">
-                            <cld-transformation width="220" crop="fill" quality="auto" fetchFormat="auto"/>
-                        </cld-image>
-
-                        <cld-image publicId="Instagram/looks2.jpg" >
-                            <cld-transformation width="220" crop="fill" quality="auto" fetchFormat="auto"/>
-                        </cld-image>
+            <g-image
+                    src="~/assets/DailyStyleLooks2.jpg"
+                    fit="cover"
+                    width="201"
+                    height="324"
+                    immediate="false"
+                    quality="90"
+            />
+            <g-image
+                    src="~/assets/DailyStyleLooks3.jpg"
+                    fit="cover"
+                    width="201"
+                    height="324"
+                    immediate="false"
+                    quality="90"
+            />
+            <g-image
+                    src="~/assets/DailyStyleLooks4.jpg"
+                    fit="cover"
+                    width="201"
+                    height="324"
+                    immediate="false"
+                    quality="90"
+            />
         </article>
     </Layout>
 </template>
@@ -204,7 +218,7 @@
     }
 
     .fondoBlog {
-        background-image: url("../assets/img/fondoBlog.svg");
+        background-image: url("../../static/fondoBlog.jpg");
         background-size: cover;
     }
 
