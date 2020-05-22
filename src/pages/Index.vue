@@ -111,6 +111,7 @@
                     height="324"
                     immediate="false"
                     quality="90"
+                    alt="dailystyle-instagram-picture"
             />
             <g-image
                     src="../assets/img/DailyStyleLooks3.jpg"
@@ -119,6 +120,7 @@
                     height="324"
                     immediate="false"
                     quality="90"
+                    alt="dailystyle-instagram-picture"
             />
             <g-image
                     src="../assets/img/DailyStyleLooks4.jpg"
@@ -127,6 +129,7 @@
                     height="324"
                     immediate="false"
                     quality="90"
+                    alt="dailystyle-instagram-picture"
             />
         </article>
     </Layout>
