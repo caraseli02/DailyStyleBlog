@@ -110,7 +110,7 @@
                     <slide class="redondo" v-for="(n, index) in 11" :index="index" :key="n.id">
 
                         <g-image
-                                :src="require(`@/assets/Instagram/DailyStyleLooks${n}.jpg`)"
+                                :src="require(`@/assets/DailyStyleLooks${n}.jpg`)"
                                 fit="fill"
                                 width="561"
                                 height="903"
