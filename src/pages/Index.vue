@@ -108,34 +108,22 @@
                 <carousel-3d :width="220" :space="240" :disable3d="true" :clickable="false"
                              :controls-visible="true">
                     <slide class="redondo" :index="0">
-                        <g-image
-                                src="~/assets/DailyStyleLooks0.jpg"
-                                :fit="cover"
-                                :width="561"
-                                :height="903"
-                                :immediate="false"
-                                :quality="50"
-                        />
+                        <cld-image publicId="Instagram/InstagramDailyStyleLooks-Camisa-Blanca.jpg">
+                            <cld-transformation width="561" crop="fill"/>
+                        </cld-image>
                     </slide>
                     <slide class="redondo" :index="1">
-                        <g-image
-                                src="~/assets/DailyStyleLooks1.jpg"
-                                :fit="cover"
-                                :width="561"
-                                :height="903"
-                                :immediate="false"
-                                :quality="50"
-                        />
+                        <cld-image publicId="Instagram/looks1.jpg">
+                            <cld-transformation width="561" crop="fill"/>
+                        </cld-image>
                     </slide>
                     <slide class="redondo" :index="2">
-                        <g-image
-                                src="~/assets/DailyStyleLooks2.jpg"
-                                :fit="cover"
-                                :width="561"
-                                :height="903"
-                                :immediate="false"
-                                :quality="50"
-                        />
+
+                        <cld-image publicId="Instagram/looks2.jpg" >
+                            <cld-transformation width="561" crop="fill" />
+                        </cld-image>
+
+
                     </slide>
                 </carousel-3d>
             </ClientOnly>
@@ -187,13 +175,13 @@
             getBlogs() {
                 return this.$page.contentfulIndexMain
             }
-/*            CreatImgList() {
-                var i;
-                for (i = 0; i < 10; i++) {
-                    this.imgList[i] = `../assets/DailyStyleLooks${i}.jpg`
-                }
-                    return this.imgList[i]
-            }*/
+            /*            CreatImgList() {
+                            var i;
+                            for (i = 0; i < 10; i++) {
+                                this.imgList[i] = `../assets/DailyStyleLooks${i}.jpg`
+                            }
+                                return this.imgList[i]
+                        }*/
         }
     }
 </script>
