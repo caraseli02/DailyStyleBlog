@@ -105,18 +105,152 @@
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="overflow-y-scroll">
             <ul class="gradientGallery InstagramGrid">
-                <li class="InstagramGrid__item ml-2 py-4 xl:py-8" v-for="(n, index) in 11" :key="index">
+
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
                     <g-image
-                            :src="require(`../assets/img/DailyStyleLooks${n}.jpg`)"
+                            src="~/assets/img/DailyStyleLooks0.jpg"
                             fit="cover"
                             width="201"
                             height="324"
                             immediate="false"
-                            quality="80"
+                            quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
                     />
                 </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks1.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks2.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks3.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks4.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks5.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks6.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks7.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks8.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks9.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks10.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8">
+                    <g-image
+                            src="~/assets/img/DailyStyleLooks11.jpg"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+
             </ul>
         </article>
     </Layout>
@@ -217,26 +351,13 @@
 
     @media (min-width: 1280px) {
         .InstagramGrid {
-            --var-gutter: 0.25rem;
-            display: grid;
-            grid-gap: calc(var(--var-gutter) / 2);
-            grid-template-columns: repeat(12, calc(25% - var(--var-gutter) * 2));
-            grid-template-rows: minmax(150px, 1fr);
-            overflow-x: scroll;
-            scroll-snap-type: x proximity;
-            padding-bottom: calc(.75 * var(--var-gutter));
-            margin-bottom: calc(-.25 * var(--var-gutter));
+
+            grid-template-columns: repeat(12, calc(20% - var(--var-gutter) * 2));
+
         }
 
         .InstagramGrid > li,
         .InstagramGrid__item {
-            scroll-snap-align: center;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: transparent;
 
         }
     }
