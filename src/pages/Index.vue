@@ -103,34 +103,21 @@
         </section>
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-8 text-black "><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
-        <article class="gradientGallery w-full py-5 my-2 flex justify-around items-center">
-            <g-image
-                    src="~/assets/img/DailyStyleLooks2.jpg"
-                    fit="cover"
-                    width="201"
-                    height="324"
-                    immediate="false"
-                    quality="90"
-                    alt="dailystyle-instagram-picture"
-            />
-            <g-image
-                    src="~/assets/img/DailyStyleLooks3.jpg"
-                    fit="cover"
-                    width="201"
-                    height="324"
-                    immediate="false"
-                    quality="90"
-                    alt="dailystyle-instagram-picture"
-            />
-            <g-image
-                    src="~/assets/img/DailyStyleLooks4.jpg"
-                    fit="cover"
-                    width="201"
-                    height="324"
-                    immediate="false"
-                    quality="90"
-                    alt="dailystyle-instagram-picture"
-            />
+        <article class="overflow-y-scroll">
+            <ul class="gradientGallery InstagramGrid">
+                <li class="InstagramGrid__item ml-2 py-4 xl:py-8" v-for="(n, index) in 11" :key="index">
+                    <g-image
+                            :src="require(`../assets/img/DailyStyleLooks${n}.jpg`)"
+                            fit="cover"
+                            width="201"
+                            height="324"
+                            immediate="false"
+                            quality="80"
+                            alt="dailystyle-instagram-picture"
+                            class="redondo"
+                    />
+                </li>
+            </ul>
         </article>
     </Layout>
 </template>
@@ -190,7 +177,70 @@
     }
 </script>
 
+
 <style scoped>
+
+    .InstagramGrid {
+        --var-gutter: 0.15rem;
+        display: grid;
+        grid-gap: calc(var(--var-gutter) / 2);
+        grid-template-columns: repeat(12, calc(60% - var(--var-gutter) * 2));
+        grid-template-rows: minmax(324px, 1fr);
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        padding-bottom: calc(.75 * var(--var-gutter));
+        margin-bottom: calc(-.25 * var(--var-gutter));
+    }
+
+    .InstagramGrid > li,
+    .InstagramGrid__item {
+        scroll-snap-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+
+    }
+
+    @media (min-width: 640px) {
+        .InstagramGrid {
+            grid-template-columns: repeat(12, calc(33% - var(--var-gutter) * 2));
+        }
+
+        .InstagramGrid > li,
+        .InstagramGrid__item {
+
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .InstagramGrid {
+            --var-gutter: 0.25rem;
+            display: grid;
+            grid-gap: calc(var(--var-gutter) / 2);
+            grid-template-columns: repeat(12, calc(25% - var(--var-gutter) * 2));
+            grid-template-rows: minmax(150px, 1fr);
+            overflow-x: scroll;
+            scroll-snap-type: x proximity;
+            padding-bottom: calc(.75 * var(--var-gutter));
+            margin-bottom: calc(-.25 * var(--var-gutter));
+        }
+
+        .InstagramGrid > li,
+        .InstagramGrid__item {
+            scroll-snap-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+
+        }
+    }
+
 
     .colorMongo {
         background-color: #FAFBFC;
