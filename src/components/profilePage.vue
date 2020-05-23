@@ -114,13 +114,18 @@
     }
 
     .bgImage {
-        background-image: url("../assets/img/desktop/fondoBlog.jpg");
+        background-image: url("../../static/fondoBlogmovil.jpg");
+    }
+
+    @media (min-width: 640px) {
+        .bgImage {
+            background-image: url("../../static/fondoBlog.jpg");
+        }
     }
 
     .s500 {
         height: 500px;
     }
-</style>
 
 <static-query>
     query {
