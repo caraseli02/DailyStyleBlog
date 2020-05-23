@@ -1,5 +1,5 @@
 
 [build]
-  command = "yarn run build"
+  command = "gridsome build"
   #functions = "functions
   publish = "dist"
