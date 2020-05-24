@@ -55,6 +55,25 @@ module.exports = {
                 // Disable the loading spinner.
                 showSpinner: false,
             }
+        },
+        {
+            use: 'gridsome-plugin-pwa',
+            options: {
+                title: 'Gridsome',
+                startUrl: '/',
+                display: 'standalone',
+                statusBarStyle: 'default',
+                manifestPath: 'manifest.json',
+                disableServiceWorker: true,
+                serviceWorkerPath: 'service-worker.js',
+                cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+                shortName: 'Gridsome',
+                themeColor: '#666600',
+                backgroundColor: '#ffffff',
+                icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
+                msTileImage: '',
+                msTileColor: '#666600'
+            }
         }
     ],
     templates: {
