@@ -104,15 +104,19 @@
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-8 text-gray-700 z-10"><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="overflow-y-scroll">
+<!--            <ul class="gradientGallery InstagramGrid">
+
+                <g-image :src="require(`!!assets-loader!@images/DailyStyleLooks0.jpg`)"/>
+            </ul>-->
             <ul class="gradientGallery InstagramGrid">
 
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks0.jpg"
+                            src="~/assets/img/DailyStyleLooks0.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -120,11 +124,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks1.jpg"
+                            src="~/assets/img/DailyStyleLooks1.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -132,11 +136,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks2.jpg"
+                            src="~/assets/img/DailyStyleLooks2.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -144,11 +148,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks3.jpg"
+                            src="~/assets/img/DailyStyleLooks3.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -156,11 +160,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks4.jpg"
+                            src="~/assets/img/DailyStyleLooks4.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -168,11 +172,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks5.jpg"
+                            src="~/assets/img/DailyStyleLooks5.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -180,11 +184,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks6.jpg"
+                            src="~/assets/img/DailyStyleLooks6.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -192,11 +196,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks7.jpg"
+                            src="~/assets/img/DailyStyleLooks7.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -204,11 +208,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks8.jpg"
+                            src="~/assets/img/DailyStyleLooks8.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -216,11 +220,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks9.jpg"
+                            src="~/assets/img/DailyStyleLooks9.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -228,11 +232,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks10.jpg"
+                            src="~/assets/img/DailyStyleLooks10.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -240,11 +244,11 @@
                 </li>
                 <li class="InstagramGrid__item">
                     <g-image
-                            src="~/assets/img/DailyStyleLooks11.jpg"
+                            src="~/assets/img/DailyStyleLooks11.jpeg"
                             fit="cover"
                             width="250"
                             height="402"
-                            immediate="false"
+                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -270,9 +274,23 @@
         },
         data: function () {
             return {
-                imgList: [],
-                // matchNumbers: '^[0-9]*$'
-            }
+
+                imgList: [
+                    "DailyStyleLooks0.jpg",
+                    "DailyStyleLooks1.jpg",
+                    "DailyStyleLooks2.jpg",
+                    "DailyStyleLooks3.jpg",
+                    "DailyStyleLooks4.jpg",
+                    "DailyStyleLooks5.jpg",
+                    "DailyStyleLooks6.jpg",
+                    "DailyStyleLooks7.jpg",
+                    "DailyStyleLooks8.jpg",
+                    "DailyStyleLooks9.jpg",
+                    "DailyStyleLooks10.jpg",
+                    "DailyStyleLooks11.jpg"
+                ]
+            // matchNumbers: '^[0-9]*$'
+        }
         },
         components: {
             VueMarkdown,
@@ -299,14 +317,15 @@
         computed: {
             getBlogs() {
                 return this.$page.contentfulIndexMain
+            },
+            CreatImgList() {
+                var i;
+                var list = []
+                for (i = 0; i < 12; i++) {
+                    list[i] = `~/assets/img/DailyStyleLooks${i}.jpg`
+                }
+                return list
             }
-            /*            CreatImgList() {
-                            var i;
-                            for (i = 0; i < 10; i++) {
-                                this.imgList[i] = `../assets/DailyStyleLooks${i}.jpg`
-                            }
-                                return this.imgList[i]
-                        }*/
         }
     }
 </script>
@@ -352,7 +371,6 @@
 
     @media (min-width: 1280px) {
         .InstagramGrid {
-
 
 
         }

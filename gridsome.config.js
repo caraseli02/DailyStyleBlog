@@ -6,7 +6,10 @@
 const contentful = require("./plugin.confentful");
 
 module.exports = {
-    chainWebpack: config => config.mode("development"),
+    chainWebpack: config => {
+        config.mode("development")
+        // config.resolve.alias.set('@images', '@/assets/img')
+    },
     siteDescription: "",
     siteUrl: "",
     icon: {

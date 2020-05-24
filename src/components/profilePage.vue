@@ -127,6 +127,8 @@
         height: 500px;
     }
 
+</style>
+
 <static-query>
     query {
         allDataInstagram {
