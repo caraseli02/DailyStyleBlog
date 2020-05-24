@@ -57,9 +57,31 @@ module.exports = {
             }
         },
         {
+            use: "gridsome-plugin-service-worker",
+            options: {
+                networkFirst: {
+                    routes: [
+                        "/",
+                        /\.(js|css|png)$/, // means "every JS, CSS, and PNG images"
+                    ],
+                },
+            },
+        },
+        {
+            use: "gridsome-plugin-manifest",
+            options: {
+                background_color: "#000000",
+                icon_path: "./src/assets/img/icon.png",
+                name: "DailyStyle",
+                short_name: "DailyStyle",
+                theme_color: "#FFFFFF",
+                lang: "en",
+            },
+        },
+        {
             use: 'gridsome-plugin-pwa',
             options: {
-                title: 'Gridsome',
+                title: 'DailyStyle',
                 startUrl: '/',
                 display: 'standalone',
                 statusBarStyle: 'default',
@@ -67,7 +89,7 @@ module.exports = {
                 disableServiceWorker: true,
                 serviceWorkerPath: 'service-worker.js',
                 cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-                shortName: 'Gridsome',
+                shortName: 'DailyStyle',
                 themeColor: '#666600',
                 backgroundColor: '#ffffff',
                 icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
