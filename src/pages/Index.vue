@@ -115,8 +115,7 @@
                             src="~/assets/img/DailyStyleLooks0.jpeg"
                             fit="cover"
                             width="250"
-                            height="402"
-                            
+                            height="402"                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -127,8 +126,7 @@
                             src="~/assets/img/DailyStyleLooks1.jpeg"
                             fit="cover"
                             width="250"
-                            height="402"
-                            
+                            height="402"                            
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"

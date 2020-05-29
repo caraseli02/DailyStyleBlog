@@ -46,12 +46,12 @@
                     <div class="">
                         <ul class="flex flex-row  justify-around list-reset mb-6 ">
                             <li class="m-2">
-                                <a href="#"
-                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">Terms</a>
+                                <g-link to="/terms/"
+                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">Terms of Service</g-link>
                             </li>
                             <li class="m-2">
-                                <a href="#"
-                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">Privacy</a>
+                                <g-link to="/privacy/"
+                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">Privacy Policy</g-link>
                             </li>
                         </ul>
                     </div>
