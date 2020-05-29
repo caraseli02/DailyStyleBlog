@@ -41,13 +41,6 @@ module.exports = {
 
         },
         {
-            use: '@zefman/gridsome-source-instagram',
-            options: {
-                username: 'daiilystylee', // Instagram username
-                typeName: 'InstagramPhoto' // The GraphQL type you want the photos to be added under. Defaults to InstagramPhoto
-            }
-        },
-        {
             use: 'gridsome-plugin-nprogress',
             options: {
                 // Setting a color is optional.
