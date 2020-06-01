@@ -90,7 +90,7 @@
                                     md:leading-normal lg:leading-relaxed ">
                             {{getBlogs.textBloc2}}
                         </p>
-                        <div class=" w-full bg-white flex justify-center sm:justify-end items-center py-6 pr-4">
+                        <div class=" w-full® flex justify-center sm:justify-end items-center py-6 pr-4">
                             <g-link class="bg-transparent hoverGradiant text-gray-500 font-semibold
                             hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent rounded"
                                     to="/galleries/" title="To blog overview"
@@ -115,7 +115,7 @@
                             src="~/assets/img/DailyStyleLooks0.jpeg"
                             fit="cover"
                             width="250"
-                            height="402"                            
+                            height="402"
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -126,7 +126,7 @@
                             src="~/assets/img/DailyStyleLooks1.jpeg"
                             fit="cover"
                             width="250"
-                            height="402"                            
+                            height="402"
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -138,7 +138,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -150,7 +150,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -162,7 +162,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -174,7 +174,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -186,7 +186,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -198,7 +198,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -210,7 +210,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -222,7 +222,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -234,7 +234,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"
@@ -246,7 +246,7 @@
                             fit="cover"
                             width="250"
                             height="402"
-                            
+
                             quality="90"
                             alt="dailystyle-instagram-picture"
                             class="redondo"

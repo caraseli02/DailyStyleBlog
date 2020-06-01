@@ -129,7 +129,7 @@ module.exports = {
         }
     ],
     templates: {
-        // ContentfulGallery: "/gallery/:slug",
+        ContentfulGallery: "/gallery/:slug",
         ContentfulPost: "/blog/:slug",
         ContentfulPage: "/:slug"
     }

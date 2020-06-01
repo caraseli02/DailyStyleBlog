@@ -6,7 +6,7 @@
                 <slot/>
             </main>
         </transition>
-        <footer class="gradient mt-16">
+        <footer class="gradient mt-16 z-10">
             <div class="container mx-auto  px-8">
                 <h4 class="flex justify-center items-center mb-2">Gracias por seguirme y apoyarme con todo su amor en mi aventura.</h4>
                 <div class="w-full flex flex-col md:flex-row justify-between">
