@@ -69,7 +69,7 @@ module.exports = {
                 lang: "en",
             },
         },*/
-        {
+        /*{
             use: 'gridsome-plugin-pwa',
             options: {
                 title: 'DailyStyle',
@@ -87,7 +87,7 @@ module.exports = {
                 msTileImage: '',
                 msTileColor: '#666600'
             }
-        },
+        },*/
         {
             use: 'klaro-gridsome',
             options: {
