@@ -53,14 +53,12 @@ module.exports = {
             use: "gridsome-plugin-service-worker",
             options: {
                 networkFirst: {
-                    routes: [
-                        "/",
-                        /\.(js|css|png)$/, // means "every JS, CSS, and PNG images"
-                    ],
+                    cacheName: "nf-v1",
+                    routes: ["/", /\.(js|css|png)/],
                 },
             },
         },
-        {
+        /*{
             use: "gridsome-plugin-manifest",
             options: {
                 background_color: "#000000",
@@ -70,7 +68,7 @@ module.exports = {
                 theme_color: "#FFFFFF",
                 lang: "en",
             },
-        },
+        },*/
         {
             use: 'gridsome-plugin-pwa',
             options: {
