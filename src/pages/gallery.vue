@@ -1,6 +1,6 @@
 <template>
     <Layout class="BgGallery ">
-        <ul class="galery relative z-10 flex flex-col md:flex-row justify-around items-center h-full sm:h-screen">
+        <ul class="mt-20 md:mt-0 galery flex flex-col md:flex-row justify-around items-center h-full sm:h-screen">
 
             <li
                     class=""
