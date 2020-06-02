@@ -92,7 +92,7 @@
             </section>-->
 
         <!-- Gallery -->
-        <section class="section-c">
+       <!-- <section class="section-c">
             <div class="gallery">
                 <a href="https://i.ibb.co/CHLBZnp/gal2323.jpg" class="big"
                 ><img src="https://i.ibb.co/CHLBZnp/gal2323.jpg" alt=""
@@ -113,7 +113,7 @@
                 ><img src="https://i.ibb.co/S6FVFNt/gal74744.jpg" alt=""
                 /></a>
             </div>
-        </section>
+        </section>-->
     </Layout>
 </template>
 

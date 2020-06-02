@@ -51,7 +51,6 @@
             <Pager :info="$page.post.pageInfo"
                    linkClass="pager__link px-3 py-1 mx-3 my-1"
                    class="mt-4 inline-block w-full text-center flex justify-center items-center"
-                   range="1"
             />
         </section>
 

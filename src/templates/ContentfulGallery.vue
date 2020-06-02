@@ -68,7 +68,7 @@
                 return renderHtmlMethod(input);
             },
             renderThumbnail(src) {
-                return renderImage({src, fit: "fill", w: 1024 / 2, h: 1024 / 2});
+                return renderImage({src, fit: "fill", w: 760 / 2, h: 1024 / 2});
             },
             openPicture(index) {
                 this.currentIndex = index;
