@@ -8,16 +8,16 @@ const axios = require('axios')
 
 module.exports = function (api) {
     api.loadSource(async actions => {
-        const {data} = await axios.get('https://dailystylelooks.herokuapp.com/')
+        const data = require('./src/data/dataInst.json')
 
         const collection = actions.addCollection('DataInstagram')
         /*for (const item of data) {
 
         }*/
         collection.addNode({
-            Followers: data.Followers,
-            Following: data.Following,
-            Posts: data.Posts
+            Followers: data['followed'],
+            Following: data['follow'],
+            Posts: data['posts']
         })
         console.log(data.Followers, data.Following, data.Posts)
     })

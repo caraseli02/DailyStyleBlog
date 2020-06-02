@@ -1,6 +1,6 @@
 <template>
-    <Layout class="">
-        <ul class="galery relative z-10 flex flex-col md:flex-row justify-around items-center ">
+    <Layout class="BgGallery ">
+        <ul class="galery relative z-10 flex flex-col md:flex-row justify-around items-center h-full sm:h-screen">
 
             <li
                     class=""
@@ -25,18 +25,18 @@
                                         {{ node.title }}
                                     </h4>
                                 </div>
-<!--                                <button class="p-4 rounded-full transition ease-in duration-200 focus:outline-none">
-                                    <svg class="w-6 h-6 flex justify-center items-center" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 494.148 494.148" style="enable-background:new 0 0 494.148 494.148;" xml:space="preserve">
-                                        <g>
-                                          <g>
-                                            <path d="M405.284,201.188L130.804,13.28C118.128,4.596,105.356,0,94.74,0C74.216,0,61.52,16.472,61.52,44.044v406.124
-                                              c0,27.54,12.68,43.98,33.156,43.98c10.632,0,23.2-4.6,35.904-13.308l274.608-187.904c17.66-12.104,27.44-28.392,27.44-45.884
-                                              C432.632,229.572,422.964,213.288,405.284,201.188z"/>
-                                          </g>
-                                        </g>
-                                    </svg>
-                                </button>-->
+                                <!--                                <button class="p-4 rounded-full transition ease-in duration-200 focus:outline-none">
+                                                                    <svg class="w-6 h-6 flex justify-center items-center" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                                         viewBox="0 0 494.148 494.148" style="enable-background:new 0 0 494.148 494.148;" xml:space="preserve">
+                                                                        <g>
+                                                                          <g>
+                                                                            <path d="M405.284,201.188L130.804,13.28C118.128,4.596,105.356,0,94.74,0C74.216,0,61.52,16.472,61.52,44.044v406.124
+                                                                              c0,27.54,12.68,43.98,33.156,43.98c10.632,0,23.2-4.6,35.904-13.308l274.608-187.904c17.66-12.104,27.44-28.392,27.44-45.884
+                                                                              C432.632,229.572,422.964,213.288,405.284,201.188z"/>
+                                                                          </g>
+                                                                        </g>
+                                                                    </svg>
+                                                                </button>-->
                             </div>
                         </div>
                     </div>
@@ -47,17 +47,15 @@
 </template>
 
 <style scoped>
-    #app {
+    .BgGallery {
         width: 100vw;
-        height: 100vh;
         background-image: url("../assets/img/styleBG.jpg");
         z-index: 1;
     }
 
-    #app::after {
+    .BgGallery::after {
         content: '';
         width: 100vw;
-        height: 100vh;
         background-color: rgba(0, 0, 0, 0.30);
         position: absolute;
         top: 0;
@@ -100,8 +98,9 @@
                 return getCoverImage(node);
             },
             renderThumbnail(src) {
-                return renderImage({src, fit: "fill", w: 760 / 4, h: 1024 / 4});
-            }        }
+                return renderImage({src, fit: "fill", w: 760 / 2, h: 1024 / 2});
+            }
+        }
     };
 </script>
 

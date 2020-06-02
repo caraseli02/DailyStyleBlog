@@ -23,7 +23,7 @@
                     <li class=" hover:text-black flex justify-center items-center"><g-link class="hover:shadow rounded-lg md:p-4 p-3 block" to="/blog">Blog</g-link></li>
                     <li class=" hover:text-black flex justify-center items-center"><g-link class="hover:shadow rounded-lg md:p-4 p-3 block" to="/gallery/">My Style</g-link></li>
                     <!--                    <li><g-link class="md:p-4 py-3 px-0 block" to="/about">About</g-link></li>-->
-                    <li class=" hover:text-black flex justify-center items-center"><g-link class="hover:shadow rounded-lg md:p-4 p-3 block" to="/contact">Contact</g-link></li>
+<!--                    <li class=" hover:text-black flex justify-center items-center"><g-link class="hover:shadow rounded-lg md:p-4 p-3 block" to="/contact">Contact</g-link></li>-->
                 </ul>
             </nav>
 
