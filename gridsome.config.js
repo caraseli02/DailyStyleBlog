@@ -49,7 +49,7 @@ module.exports = {
                 showSpinner: false,
             }
         },
-        {
+/*        {
             use: "gridsome-plugin-service-worker",
             options: {
                 networkFirst: {
@@ -57,7 +57,7 @@ module.exports = {
                     routes: ["/", /\.(js|css|png)/],
                 },
             },
-        },
+        },*/
         /*{
             use: "gridsome-plugin-manifest",
             options: {

@@ -19,7 +19,6 @@ module.exports = function (api) {
             Following: data['follow'],
             Posts: data['posts']
         })
-        console.log(data.Followers, data.Following, data.Posts)
     })
 
     /*api.createPages(({createPage}) => {
