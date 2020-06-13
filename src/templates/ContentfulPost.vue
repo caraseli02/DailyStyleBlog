@@ -22,8 +22,8 @@
         </div>
       -->
         <!-- Showcase -->
-        <section class="section-a my-8">
-            <article class="lg:px-16 px-8  flex flex-col xl:flex-row items-center justify-between bg-gray-100">
+        <section class="section-a my-8 pb-3 bg-gray-100">
+            <article class="lg:px-16 px-8  flex flex-col xl:flex-row items-center justify-between">
                 <div class="flex-1 px-4 h-full ">
                     <div class=" sm:hidden w-full ">
                         <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -65,12 +65,17 @@
                 </div>
             </article>
 
-            <div class="lg:px-16 px-8 bg-white flex justify-between items-center">
+            <div class="lg:px-16 px-8 bg-white flex justify-between items-center bg-gray-100">
                 <g-link class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded"
                         to="/blog/" title="To blog overview"
                 >Blog
                 </g-link>
-                <g-link class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded">
+                <g-link
+                        class="bg-transparent hoverGradiant text-black-700 font-semibold hover:text-white
+                                py-2 px-4 border border-black-500 hover:border-transparent rounded"
+                        :to="/blog/$page.next.slug"
+                >
+
                     Next Post
                 </g-link>
             </div>
@@ -449,6 +454,9 @@
                 }
                 title
             }
+        },
+        next {
+            slug
         }
     }
 </page-query>

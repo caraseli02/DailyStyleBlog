@@ -101,7 +101,7 @@
                 </div>
             </div>
         </section>
-        <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-5 sm:-mb-8 text-gray-700 z-10"><a
+        <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-5 sm:-mb-6 text-gray-700 z-10"><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="overflow-y-scroll">
 <!--            <ul class="gradientGallery InstagramGrid">
@@ -381,7 +381,7 @@
 
 
     .colorMongo {
-        background-color: #FAFBFC;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(250,251,252,1) 19%, rgba(250,251,252,1) 100%);
     }
 
     .lineZ {
