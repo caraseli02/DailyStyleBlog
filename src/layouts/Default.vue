@@ -12,30 +12,17 @@
                 <div class="w-full flex flex-col md:flex-row justify-between">
                     <div class="">
                         <ul class="flex flex-row  justify-around list-reset mb-6">
-                            <!--<li class="m-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">
-                                    <button class="bg-white hover:bg-gray-100 text-blue font-bold py-2 px-4 rounded-full w-10 flex justify-center items-center">
-                                        f
-                                    </button>
-                                </a>
-                            </li>-->
-                            <li class="m-4 inline-block mr-2 md:block md:mr-0  w-6 h-6">
-                                <a href="https://www.instagram.com/daiilystylee/"
+                            <li
+                                    v-for="(media, index) in socialMedia"
+                                    :key="index"
+                                    class="m-4 inline-block mr-2 md:block md:mr-0  w-6 h-6"
+                            >
+                                <a :href="media.href"
                                    class="no-underline hover:underline text-gray-800 hover:text-orange-500">
-                                    <g-image src="../assets/media/Instagram.svg"
+                                    <g-image  :src="require(`!!assets-loader!@media/${media.img}`)"
                                              height="32"
                                              width="32"
-                                             alt="Instagram"
-                                    />
-
-                                </a>
-                            </li>
-                            <li class="m-4 inline-block mr-2 md:block md:mr-0 w-6 h-6">
-                                <a href="mailto:daniela.mindru@gmail.com"  class="no-underline hover:underline text-gray-800 hover:text-orange-500">
-                                    <g-image src="../assets/media/Gmail.svg"
-                                             height="32"
-                                             width="32"
-                                            alt="Gmail"
+                                             :alt="media.alt"
                                     />
 
                                 </a>
@@ -45,13 +32,13 @@
 
                     <div class="">
                         <ul class="flex flex-row  justify-around list-reset mb-6 ">
-                            <li class="m-2">
-                                <g-link to="/terms/"
-                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">Terms of Service</g-link>
-                            </li>
-                            <li class="m-2">
-                                <g-link to="/privacy/"
-                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">Privacy Policy</g-link>
+                            <li
+                                    v-for="(link ,index) in legal"
+                                    :key="index"
+                                    class="m-2"
+                            >
+                                <g-link :to="link.link"
+                                   class="no-underline hover:underline text-gray-800 hover:text-orange-500">{{link.text}}</g-link>
                             </li>
                         </ul>
                     </div>
@@ -77,6 +64,30 @@
     import Nav from "../components/Nav";
 
     export default {
+        data() {
+            return {
+                socialMedia: [
+                    {
+                        "href": "https://www.instagram.com/daiilystylee/",
+                        "img" : "Instagram.svg",
+                        "alt" : "Instagram"
+                    },{
+                        "href": "mailto:daniela.mindru@gmail.com",
+                        "img" : "Gmail.svg",
+                        "alt" : "Gmail"
+                    },
+                ],
+                legal: [
+                    {
+                        "text" : "Terms of Service",
+                        "link" : "/terms/"
+                    },{
+                        "text" : "Privacy Policy",
+                        "link" : "/privacy/"
+                    }
+                ]
+            }
+        },
         components: {
             Nav
         }

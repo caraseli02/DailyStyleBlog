@@ -70,7 +70,7 @@
 
     export default {
         metaInfo: {
-            title: "Fashion Blog"
+            title: "Fashion Blog | Looks | Fashion | Moda | Lifestyle"
         },
         components: {
             CubicTop,

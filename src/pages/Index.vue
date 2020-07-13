@@ -9,10 +9,40 @@
             </div>
         </section>
         <section class="py-8">
-
             <div class="max-w-6xl mx-auto m-8 ">
+                <div
+                        v-for="(article , index) in articles" :key="index"
+                        class="flex flex-wrap mb-16 md:mb-12" :class="article.class"
+                >
+                    <div class="w-full sm:w-1/2 pl-6 flex justify-center items-start flex-col relative">
+                        <div class="hidden absolute top-0 right-0  xl:block">
+                            <h3 class="italic text-gray-500">{{article.slogan}}</h3>
+                            <span class="flex justify-end mt-1 text-gray-500">{{article.sloganAut}}</span>
+                        </div>
+                        <g-link class="gradientLinks" :to="article.linkTo"><h2
+                                class="text-2xl xl:text-4xl text-gray-800 font-bold">
+                            {{article.title}}</h2></g-link>
+                        <p class=" flex flex-col justify-around text-gray-700 mb-3
+                                    lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl
+                                    md:leading-normal lg:leading-relaxed">
+                            {{article.text}}
+                        </p>`
+                        <link-btn :link-btn="article.linkTo">
+                            Descubre Mas →
+                        </link-btn>
+                    </div>
+                    <div class="w-full sm:w-1/2 ">
+                        <g-link to="/blog">
+                            <g-image
+                                    class="w-5/6 sm:h-auto mx-auto"
+                                    :src="require(`!!assets-loader!@images/${article.img}`)"
+                                    alt="dailystyle blog picture"
+                            />
+                        </g-link>
+                    </div>
 
-                <div class="flex flex-wrap mb-16 md:mb-12">
+                </div>
+                <!--<div class="flex flex-wrap mb-16 md:mb-12">
                     <div class="w-full sm:w-1/2 pl-6 flex justify-center items-start flex-col relative">
                         <div class="hidden absolute top-0 right-0  xl:block">
                             <h3 class="italic text-gray-500">"Lo más importante al vestir es una sonrisa"</h3>
@@ -21,16 +51,14 @@
                         <g-link class="gradientLinks" to="/blog"><h2
                                 class="text-2xl xl:text-4xl text-gray-800 font-bold">
                             {{getBlogs.titleBloc1}}</h2></g-link>
-                        <p class=" flex flex-col justify-around text-gray-700 mb-3 lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl
+                        <p class=" flex flex-col justify-around text-gray-700 mb-3
+                                    lg:mt-10 lg:mb-10 mt-3 text-base lg:text-xl
                                     md:leading-normal lg:leading-relaxed">
                             {{getBlogs.textBloc1}}
                         </p>
-                        <div class=" w-full bg-white flex justify-center sm:justify-end items-center pb-8">
-                            <g-link class="bg-transparent hoverGradiant text-gray-500 font-semibold hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent rounded"
-                                    to="/blog/" title="To blog overview"
-                            >Descubre Mas →
-                            </g-link>
-                        </div>
+                        <link-btn link-btn="blog">
+                            Descubre Mas →
+                        </link-btn>
                     </div>
                     <div class="w-full sm:w-1/2 ">
                         <g-link to="/blog">
@@ -69,7 +97,7 @@
                 </div>
                 <div class="flex flex-wrap flex-col-reverse sm:flex-row colorMongo pt-16 md:pt-12">
                     <div class="w-full sm:w-1/2">
-                        <g-link to="/galleries">
+                        <g-link to="/gallery">
                             <g-image class="w-5/6 sm:h-auto mx-auto"
                                      src="../assets/img/DailyStyleLooksGallery.jpg"
                                      alt="dailystyle gallery picture"/>
@@ -82,7 +110,7 @@
                                 a hacer mañana."</h3>
                             <span class="flex justify-end mt-1 text-gray-500">Imogen Cunningham</span>
                         </div>
-                        <g-link class="gradientLinks" to="/blog"><h2
+                        <g-link class="gradientLinks" to="/gallery"><h2
                                 class="text-2xl xl:text-4xl text-gray-800 font-bold">
                             {{getBlogs.titleBloc2}}</h2></g-link>
                         <p class=" flex flex-col justify-around text-gray-700 mb-3
@@ -91,167 +119,26 @@
                             {{getBlogs.textBloc2}}
                         </p>
                         <div class=" w-full® flex justify-center sm:justify-end items-center py-6 pr-4">
-                            <g-link class="bg-transparent hoverGradiant text-gray-500 font-semibold
-                            hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent rounded"
-                                    to="/galleries/" title="To blog overview"
-                            >Descubre Mas →
-                            </g-link>
+                            <link-btn link-btn="gallery">
+                                Descubre Mas →
+                            </link-btn>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-5 sm:-mb-6 text-gray-700 z-10"><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
         <article class="overflow-y-scroll">
-<!--            <ul class="gradientGallery InstagramGrid">
-
-                <g-image :src="require(`!!assets-loader!@images/DailyStyleLooks0.jpg`)"/>
-            </ul>-->
             <ul class="gradientGallery InstagramGrid">
-
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks0.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks1.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks2.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks3.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks4.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks5.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks6.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks7.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks8.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks9.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks10.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
-                <li class="InstagramGrid__item">
-                    <g-image
-                            src="~/assets/img/DailyStyleLooks11.jpeg"
-                            fit="cover"
-                            width="250"
-                            height="402"
-
-                            quality="90"
-                            alt="dailystyle-instagram-picture"
-                            class="redondo"
-                    />
-                </li>
+                <g-image
+                        v-for="(img, index) in imgList" :key="index"
+                        :src="require(`!!assets-loader!@images/${img}`)"
+                        fit="cover"
+                        quality="90"
+                        alt="dailystyle-instagram-picture"
+                        class="redondo"
+                />
 
             </ul>
         </article>
@@ -264,6 +151,7 @@
     import CubicTop from "../components/CubicTop";
     import CubicBottom from "../components/CubicBottom";
     import VueMarkdown from "vue-markdown";
+    import LinkBtn from "../components/buttons/linkBtn";
 
     export default {
         name: 'Index',
@@ -272,25 +160,48 @@
         },
         data: function () {
             return {
-
                 imgList: [
-                    "DailyStyleLooks0.jpg",
-                    "DailyStyleLooks1.jpg",
-                    "DailyStyleLooks2.jpg",
-                    "DailyStyleLooks3.jpg",
-                    "DailyStyleLooks4.jpg",
-                    "DailyStyleLooks5.jpg",
-                    "DailyStyleLooks6.jpg",
-                    "DailyStyleLooks7.jpg",
-                    "DailyStyleLooks8.jpg",
-                    "DailyStyleLooks9.jpg",
-                    "DailyStyleLooks10.jpg",
-                    "DailyStyleLooks11.jpg"
+                    "DailyStyleLooks0.jpeg",
+                    "DailyStyleLooks1.jpeg",
+                    "DailyStyleLooks2.jpeg",
+                    "DailyStyleLooks3.jpeg",
+                    "DailyStyleLooks4.jpeg",
+                    "DailyStyleLooks5.jpeg",
+                    "DailyStyleLooks6.jpeg",
+                    "DailyStyleLooks7.jpeg",
+                    "DailyStyleLooks8.jpeg",
+                    "DailyStyleLooks9.jpeg",
+                    "DailyStyleLooks10.jpeg",
+                    "DailyStyleLooks11.jpeg"
+                ],
+                articles: [
+                    {
+                        "slogan": "' Lo más importante al vestir es una sonrisa '",
+                        "sloganAut": "Ann Taylor",
+                        "img": "DailyStyleLooksBlog.jpg",
+                        "linkTo": "/blog/",
+                        "text": "Donde recopilo ideas, inspiración diaria, pensamientos y fotos de mi estilo personal. " +
+                            "Mi blog le dará una idea de mis aventuras diarias con la moda. " +
+                            "También es una forma de compartir alguna de mis cosas favoritas en la vida, la moda, " +
+                            "inspiración , consejos de belleza y estilo",
+                        "title": "Un blog de moda..",
+                        "class" : ""
+                    }, {
+                        "slogan": "¿Cuál de mis fotos es mi fotografía preferida? Una que voy a hacer mañana.",
+                        "sloganAut": "Imogen Cunningham",
+                        "img": "DailyStyleLooksGallery.jpg",
+                        "linkTo": "/gallery/",
+                        "text": "Empece a crear mi galería de looks como un hobby, " +
+                                "en una nueva experiencia para mí espero que os animéis " +
+                                "a compartirla conmigo y formar parte de ella.",
+                        "title": "Una galería de inspiraciones...",
+                        "class" : "flex-row-reverse"
+                    },
                 ]
-            // matchNumbers: '^[0-9]*$'
-        }
+            }
         },
         components: {
+            LinkBtn,
             VueMarkdown,
             CubicTop,
             CubicBottom,
@@ -315,14 +226,6 @@
         computed: {
             getBlogs() {
                 return this.$page.contentfulIndexMain
-            },
-            CreatImgList() {
-                var i;
-                var list = []
-                for (i = 0; i < 12; i++) {
-                    list[i] = `~/assets/img/DailyStyleLooks${i}.jpg`
-                }
-                return list
             }
         }
     }
@@ -332,7 +235,7 @@
 <style scoped>
 
     .InstagramGrid {
-        height: 450px;
+        height: 350px;
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: repeat(12, 250px);
@@ -381,16 +284,11 @@
 
 
     .colorMongo {
-        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(250,251,252,1) 19%, rgba(250,251,252,1) 100%);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(250, 251, 252, 1) 19%, rgba(250, 251, 252, 1) 100%);
     }
 
     .lineZ {
         z-index: -1;
-    }
-
-    .hoverGradiant:hover {
-        background: linear-gradient(90deg, #fbd2e0 0%, #fbc9fb 100%);
-        color: #03120e;
     }
 
     .gradientGallery {

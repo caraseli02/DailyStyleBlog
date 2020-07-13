@@ -7,8 +7,9 @@ const contentful = require("./plugin.confentful");
 
 module.exports = {
     chainWebpack: config => {
+        config.resolve.alias.set('@images', '@/assets/img')
+        config.resolve.alias.set('@media', '@/assets/media')
         config.mode("development")
-        // config.resolve.alias.set('@images', '@/assets/img')
     },
     siteDescription: "DailyStyle | Looks | Fashion | Moda | Lifestyle",
     siteUrl: "https://dailystylelooks.com",
