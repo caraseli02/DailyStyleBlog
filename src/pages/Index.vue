@@ -1,6 +1,13 @@
 <template>
     <Layout class="relative">
-        <profile-page/>
+        <transition
+                appear
+                @before-enter="beforeEnter"
+                @enter="enter"
+                :css="false"
+        >
+            <profile-page/>
+        </transition>
         <cubic-top/>
         <CubicBottom/>
         <section>
@@ -8,11 +15,14 @@
                 <!--                <g-image src="../assets/img/desktop/bgmallorca@2x.jpg" class="w-full"/>-->
             </div>
         </section>
-        <section class="py-8">
+        <section
+
+                class="py-8"
+        >
             <div class="max-w-6xl mx-auto m-8 ">
                 <div
                         v-for="(article , index) in articles" :key="index"
-                        class="flex flex-wrap mb-16 md:mb-12" :class="article.class"
+                        class="card flex flex-wrap mb-16 md:mb-12" :class="article.class"
                 >
                     <div class="w-full sm:w-1/2 pl-6 flex justify-center items-start flex-col relative">
                         <div class="hidden absolute top-0 right-0  xl:block">
@@ -129,19 +139,22 @@
         </section>
         <h3 class=" flex justify-center items-end w-full text-5xl sm:text-6xl -mb-5 sm:-mb-6 text-gray-700 z-10"><a
                 href="https://www.instagram.com/daiilystylee/">INSTAGRAM</a></h3>
-        <article class="overflow-y-scroll">
-            <ul class="gradientGallery InstagramGrid">
-                <g-image
-                        v-for="(img, index) in imgList" :key="index"
-                        :src="require(`!!assets-loader!@images/${img}`)"
-                        fit="cover"
-                        quality="90"
-                        alt="dailystyle-instagram-picture"
-                        class="redondo"
-                />
-
-            </ul>
-        </article>
+        <intersect @enter="instDisplay = true" @leave="instDisplay = false">
+            <!--Intersected-->
+            <article class="overflow-y-scroll">
+                <ul v-if="instDisplay" class="gradientGallery InstagramGrid">
+                    <g-image
+                            v-for="(img, index) in imgList" :key="index"
+                            :src="require(`!!assets-loader!@images/${img}`)"
+                            fit="cover"
+                            quality="90"
+                            alt="dailystyle-instagram-picture"
+                            class="inst redondo cover"
+                    />
+                </ul>
+            </article>
+        </intersect>
+        <!--Intersectzd-->
     </Layout>
 </template>
 
@@ -152,6 +165,8 @@
     import CubicBottom from "../components/CubicBottom";
     import VueMarkdown from "vue-markdown";
     import LinkBtn from "../components/buttons/linkBtn";
+    import Intersect from 'vue-intersect'
+    import gsap from 'gsap'
 
     export default {
         name: 'Index',
@@ -185,22 +200,24 @@
                             "También es una forma de compartir alguna de mis cosas favoritas en la vida, la moda, " +
                             "inspiración , consejos de belleza y estilo",
                         "title": "Un blog de moda..",
-                        "class" : ""
+                        "class": ""
                     }, {
                         "slogan": "¿Cuál de mis fotos es mi fotografía preferida? Una que voy a hacer mañana.",
                         "sloganAut": "Imogen Cunningham",
                         "img": "DailyStyleLooksGallery.jpg",
                         "linkTo": "/gallery/",
                         "text": "Empece a crear mi galería de looks como un hobby, " +
-                                "en una nueva experiencia para mí espero que os animéis " +
-                                "a compartirla conmigo y formar parte de ella.",
+                            "en una nueva experiencia para mí espero que os animéis " +
+                            "a compartirla conmigo y formar parte de ella.",
                         "title": "Una galería de inspiraciones...",
-                        "class" : "flex-row-reverse"
+                        "class": "flex-row-reverse"
                     },
-                ]
+                ],
+                instDisplay: false
             }
         },
         components: {
+            Intersect,
             LinkBtn,
             VueMarkdown,
             CubicTop,
@@ -215,12 +232,34 @@
                     .then(m => m.Slide)
                     .catch()
         },
+        mounted() {
+            gsap.from('.card', {
+                duration: 1.2,
+                opacity: 0,
+                scale: 0,
+                y: 200,
+                ease: 'power1',
+                stagger: 0.1
+            })
+        },
         methods: {
             getCoverImage(node) {
                 return getCoverImage(node);
             },
             renderThumbnail(src) {
                 return renderImage({src, fit: "fill", w: 968, h: 968});
+            },
+            beforeEnter(el) {
+                el.style.opacity = 0
+                el.style.transform = 'scale(0,0)'
+            },
+            enter(el, done) {
+                gsap.to(el, {
+                    duration: 1,
+                    opacity: 1,
+                    scale: 1,
+                    onComplete: done
+                })
             }
         },
         computed: {
