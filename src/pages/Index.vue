@@ -149,7 +149,7 @@
                             fit="cover"
                             quality="90"
                             alt="dailystyle-instagram-picture"
-                            class="inst redondo cover"
+                            class="inst redondo cover instSize"
                     />
                 </ul>
             </article>
@@ -272,6 +272,11 @@
 
 
 <style scoped>
+
+    .instSize {
+        width: 250px;
+        height: 312px;
+    }
 
     .InstagramGrid {
         height: 350px;
